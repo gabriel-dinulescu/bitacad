@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Proiect javascript</title>
+        <style>
+            body{
+                padding: 0px;
+                margin: 0px;
+                background-color: aliceblue;
+            }
+            .center{
+                text-align: center;
+            }
+            .container{
+                padding: 15px;
+                margin-left:30%;
+                margin-right:30%;
+                border-radius: 10px;
+                background-color:sandybrown;
+                
+            }
+            .container #tabel{
+                text-align: center;
+                width: 100%;
+            }
+
+            .form{
+                padding: 5px 5px;
+            }
+            .head-nume, .head-prenume, .head-varsta{
+                cursor: pointer;
+            }
+
+            .del{
+                background-color: red;
+                color: white;
+                border-radius: 10px;
+            }
+
+            .edit{
+                background-color: yellow;
+                color: black;
+                border-radius: 10px;
+            }
+            /* .mesaj{
+                background-color: red;
+                color: white;
+                padding: 0px 10px;
+                position: static;
+                float: right;
+                margin-top: 20px;
+                margin-right: 20px;
+                border-radius: 10px;
+            }
+            ul, li{
+                padding: 0px 10px;
+            } */
+
+            .reset{
+                margin-left: 20px;
+            }
+        </style>
+        <script type="text/javascript" src="scripts.js"></script>
+    </head>
+    <body onload="draw();">
+        <header class="center"><h2>Lista de persoane</h2></header>
+        <!-- <div class="mesaj hidden" id="error"><ul></ul></div> -->
+        <div class="container">
+                <form id="add-form" class="form" onsubmit="adauga(this,event);">
+                        <fieldset>
+                                <legend>Adauga persoana</legend>
+                                <label for="nume">Nume: </label><input id="nume" type="text" name="nume"/> <br />
+                                <label>Prenume: <input type="text" name="prenume"/></label> <br />
+                                <label>Numar telefon: <input type="tel" name="telefon"/></label> <br />
+                                <label>Varsta: <input type="number" name="varsta"/></label> <br />
+                                <br />
+                                <input type="submit" value="Salveaza"/>
+                        </fieldset>
+                </form>
+                <button class="reset" onclick="event, reset(-1);">Anuleaza</button>
+        </div>
+        <br />
+        <div class="container">
+                <table id="tabel" border="1" style="border-collapse:collapse;">
+                    <thead>
+                        <tr>
+                            <th class="head-nume" width="15%" onclick="sorteazaNume()">Nume</th>
+                            <th class="head-prenume" width="15%" onclick="sorteazaPrenume()">Prenume</th>
+                            <th class="head-varsta" width="15%" onclick="sorteazaVarsta()">Varsta</th>
+                            <th width="15%">Telefon</th>
+                            <th width="15%">Actiuni</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+    </body>
+
+
+
+</html>
